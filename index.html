@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/favicon.ico">
     <link rel="icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="styles/style.css">
@@ -15,9 +15,25 @@
     <title>Bate-Papo UOL</title>
 </head>
 <body>
-    <div class="top">
-        <img src="assets/logo.png" alt="Bate Papo Logo">
-        <ion-icon name="people"></ion-icon>
+    <div class="app">
+        <div class="top">
+            <img src="assets/logo.png" alt="Bate Papo Logo">
+            <ion-icon onclick="openUsers()" name="people"></ion-icon>
+        </div>
+
+        <div class="chat">
+            <div class="message">
+                <span class="time">(12:29:33)</span><span class="user">João</span><span>saiu.</span>
+            </div>
+        </div>
+
+        <div class="input">
+
+        </div>
+
+        <div class="sidebar">
+
+        </div>
     </div>
 
 
@@ -26,4 +42,8 @@
 </body>
 </html>
 
-<!-- <ion-icon name="paper-plane-outline"></ion-icon> -->
+<!-- <ion-icon name="paper-plane-outline"></ion-icon> 
+     <ion-icon name="person-circle"></ion-icon>
+     <ion-icon name="lock-closed"></ion-icon>
+     <ion-icon name="lock-open"></ion-icon>
+-->
