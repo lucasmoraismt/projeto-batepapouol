@@ -1,0 +1,31 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.top img {
+    width: 75px;
+    margin-left: 22px;
+}
+
+.top ion-icon {
+    font-size: 42px;
+    color: #000;
+    margin-right: 22px;
+}

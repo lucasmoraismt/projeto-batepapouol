@@ -94,7 +94,7 @@ The following tools were used in the construction of the project:
 -   Prototype:  **[Figma](https://www.figma.com/)**  →  **[Protótipo (Ecoleta)](https://www.figma.com/file/eviXSw3MnQVphvpalRT78c/Chat-UOL?node-id=0%3A1)**
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**
 -   Icons:  **[Ion Icons](https://ionicons.com/)**
--   Fonts:  **[]()**
+-   Fonts:  **[Roboto](https://fonts.google.com/specimen/Roboto)**
 
 
 ---
