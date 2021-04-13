@@ -66,7 +66,7 @@ The application layout is available on Figma:
 <p align="center">
   <img alt="Login" title="#BatePapo" src="./assets/login.png" width="200px">
 
-  <img alt="Chat" title="#BatePapo" src="./assets/chat.png" width="200px">
+  <img alt="Chat" title="#BatePapo" src="assets/chat.png" width="200px">
 </p>
 
 ### Pre-requisites
