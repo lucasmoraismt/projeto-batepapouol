@@ -22,12 +22,29 @@
         </div>
 
         <div class="chat">
-            <div class="message">
+            <div class="message status">
+                <span class="time">(12:29:22)</span>
+                <span class="user">João</span>
+                <span>entrou.</span>
+            </div>
+            <div class="message private">
                 <span class="time">(12:29:33)</span>
                 <span class="user">Sálvio</span>
-                <span>para</span>
+                <span>privado para</span>
                 <span class="user">Marilene:</span>
                 <span>Olá, Marilene!</span>
+            </div>
+            <div class="message">
+                <span class="time">(12:30:02)</span>
+                <span class="user">Ana</span>
+                <span>para</span>
+                <span class="user">Todos:</span>
+                <span>Tudo bem, pessoal?</span>
+            </div>
+            <div class="message status">
+                <span class="time">(12:30:45)</span>
+                <span class="user">Marilene</span>
+                <span>saiu.</span>
             </div>
         </div>
 
@@ -35,7 +52,7 @@
             <div class="input">
                 <input id="typing" type="text" placeholder="Escreva aqui...">
                 <div class="message">
-                    <span>Enviando para Marilene (público)</span>
+                    <span>Enviando para Ana (público)</span>
                 </div>
             </div>
             <ion-icon onclick="sendMessage()" name="paper-plane-outline"></ion-icon> 
