@@ -1,4 +1,6 @@
 
+let chat = document.querySelector(".chat");
+let userList = document.querySelector(".users");
 let selectedUser = document.querySelector(".user.selected");
 let selectedPrivacy = document.querySelector(".privacy.selected");
 let name = document.querySelector(".user.selected .name");
@@ -36,11 +38,69 @@ function getUsers() {
 }
 
 function getMessages() {
-    axios.get('')
+    let promise = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/messages');
+
+    promise.then(populateMessages);
+}
+
+function populateMessages(msgList) {
+
+    for(i = 0; i < msgList.data.length; i++) {
+        if(msgList.data[i].type === 'status') {
+
+            let currentMsg = msgList.data[i]
+            let messageHTML = `
+                <div class="message status">
+                    <span class="time">(${currentMsg.time})</span>
+                    <span class="user">${currentMsg.from}</span>
+                    <span>${currentMsg.text}</span>
+                </div>`;
+
+            chat.innerHTML += messageHTML;
+
+        } else if(msgList.data[i].type === 'message') {
+
+            let currentMsg = msgList.data[i];
+            let messageHTML = `
+                <div class="message">
+                    <span class="time">(${currentMsg.time})</span>
+                    <span class="user">${currentMsg.from}</span>
+                    <span>para</span>
+                    <span class="user">${currentMsg.to}</span>
+                    <span>: ${currentMsg.text}</span>
+                </div>`;
+
+            chat.innerHTML += messageHTML;
+
+        } else if((msgList.data[i].to === nick && msgList.data[i].type === 'private_message') || (msgList.data[i].from === nick && msgList.data[i].type === 'private_message')){
+
+            let currentMsg = msgList.data[i];
+            let messageHTML = `
+                <div class="message private">
+                    <span class="time">(${currentMsg.time})</span>
+                    <span class="user">${currentMsg.from}</span>
+                    <span>privado para</span>
+                    <span class="user">${currentMsg.to}</span>
+                    <span>${currentMsg.text}</span>
+                </div>`;
+
+            chat.innerHTML += messageHTML;
+        }
+    }
 }
 
 function sendMessage(input) {
 
+}
+
+function openUsers() {
+    let sidebar = document.querySelector(".sidebar");
+    sidebar.style.display = "block";
+}
+
+function exit() {
+    let sidebar = document.querySelector(".sidebar");
+    sidebar.style.display = "none"
 }
 
 function selectUser(user) {
@@ -65,17 +125,6 @@ function updateSending() {
     let pvt = privacy.innerHTML;
     sending.innerHTML = `Enviando para ${user} (${pvt})`;
 }
-
-function openUsers() {
-    let sidebar = document.querySelector(".sidebar");
-    sidebar.style.display = "block";
-}
-
-function exit() {
-    let sidebar = document.querySelector(".sidebar");
-    sidebar.style.display = "none"
-}
-
 
 {/* <div class="message status">
         <span class="time">(12:29:22)</span>
