@@ -22,37 +22,14 @@
         </div>
 
         <div class="chat">
-            <div class="message status">
-                <span class="time">(12:29:22)</span>
-                <span class="user">João</span>
-                <span>entrou.</span>
-            </div>
-            <div class="message private">
-                <span class="time">(12:29:33)</span>
-                <span class="user">Sálvio</span>
-                <span>privado para</span>
-                <span class="user">Marilene:</span>
-                <span>Olá, Marilene!</span>
-            </div>
-            <div class="message">
-                <span class="time">(12:30:02)</span>
-                <span class="user">Ana</span>
-                <span>para</span>
-                <span class="user">Todos:</span>
-                <span>Tudo bem, pessoal?</span>
-            </div>
-            <div class="message status">
-                <span class="time">(12:30:45)</span>
-                <span class="user">Marilene</span>
-                <span>saiu.</span>
-            </div>
+            
         </div>
 
         <div class="send">
             <div class="input">
                 <input id="typing" type="text" placeholder="Escreva aqui...">
                 <div class="message">
-                    <span class="sending">Enviando para Ana (público)</span>
+                    <span class="sending">Enviando para xyz (público)</span>
                 </div>
             </div>
             <ion-icon onclick="sendMessage(this)" name="paper-plane-outline"></ion-icon> 
@@ -103,6 +80,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
     <script src="scripts/script.js"></script>

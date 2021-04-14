@@ -10,15 +10,7 @@
     Brazil's most famous web chat.
 </h3>
 
-<p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/">
-  
-  <a href="https://github.com/tgmarinho/README-ecoleta/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/">
-  </a>
-    
+<p align="center">  
    <img alt="License" src="https://img.shields.io/github/license/lucasmoraismt/projeto-batepapouol">
    <a href="https://github.com/">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/lucasmoraismt/projeto-batepapouol">
@@ -45,8 +37,8 @@ The focus of this project is to develop pure JavaScript skills and to start to l
    - [ ] Loads list of active users
 
 - [ ] Messaging experience
-   - [ ] Selects user/everyone to send a message
-   - [ ] Selects between private and public message
+   - [x] Selects user/everyone to send a message
+   - [x] Selects between private and public message
    - [ ] Auto scrolls messages
    - [ ] Send message on Enter
 
