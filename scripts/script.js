@@ -1,13 +1,15 @@
 
 let selectedUser = document.querySelector(".user.selected");
 let selectedPrivacy = document.querySelector(".privacy.selected");
+let name = document.querySelector(".user.selected .name");
+let privacy = document.querySelector(".privacy.selected span");
 
 getUsers();
 getMessages();
 // login();
 
 function login() {
-    let name = prompt("Qual seu nome?");
+    let nick = prompt("Qual seu nome?");
 }
 
 function getUsers() {
@@ -36,10 +38,21 @@ function selectUser(user) {
     selectedUser.classList.remove("selected");
     user.classList.add("selected");
     selectedUser = user;
+    name = document.querySelector(".user.selected .name");
+    updateSending();
 }
 
-function selectPrivacy(privacy) {
+function selectPrivacy(pvt) {
     selectedPrivacy.classList.remove("selected");
-    privacy.classList.add("selected");
-    selectedPrivacy = privacy;
+    pvt.classList.add("selected");
+    selectedPrivacy = pvt;
+    privacy = document.querySelector(".privacy.selected span");
+    updateSending();
+}
+
+function updateSending() {
+    let sending = document.querySelector(".sending");
+    let user = name.innerHTML;
+    let pvt = privacy.innerHTML;
+    sending.innerHTML = `Enviando para ${user} (${pvt})`;
 }
