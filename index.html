@@ -60,12 +60,54 @@
 
         <div class="sidebar">
 
+            <div class="exit" onclick="exit()">
+            </div>
+
+            <div class="list">
+
+                <div class="users">
+                    <p>Escolha um contato para enviar mensagem:</p>
+
+                    <div class="user">
+                        <div>
+                            <ion-icon onclick="openUsers()" name="people"></ion-icon>
+                            <span class="name">Todos</span>
+                        </div>
+                        <ion-icon class="check selected" name="checkmark"></ion-icon>
+                    </div>
+
+                </div>
+
+                <div class="privacy">
+                    <p>Escolha a visibilidade:</p>
+
+                    <div class="privacy">
+
+                        <div class="public">
+                            <div>
+                                <ion-icon name="lock-open"></ion-icon>
+                                <span>Público</span>
+                            </div>
+                            <ion-icon class="check selected" name="checkmark"></ion-icon>
+                        </div>
+
+                        <div class="private">
+                            <div>
+                                <ion-icon name="lock-closed"></ion-icon>
+                                <span>Privado</span> 
+                            </div>
+                            <ion-icon class="check" name="checkmark"></ion-icon>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
     <script src="scripts/script.js"></script>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>
 
@@ -73,4 +115,5 @@
      <ion-icon name="person-circle"></ion-icon>
      <ion-icon name="lock-closed"></ion-icon>
      <ion-icon name="lock-open"></ion-icon>
+     <ion-icon name="checkmark"></ion-icon>
 -->

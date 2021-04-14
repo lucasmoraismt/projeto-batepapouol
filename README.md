@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="BatePapo" title="#BatePapoUOL" src="./assets/banner.png" />
+    <img alt="BatePapo" title="#BatePapoUOL" src="assets/banner.png" />
 </h1>
 
 <h1 align="center">
