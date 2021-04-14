@@ -121,29 +121,30 @@ input:focus{
 .sidebar {
     position:absolute;
     top: 0;
-    left: 0;
-    display: flex;
-    height:100%;
-    width: 100%;
+    right: 0;
+    display: none;
+    height:100vh;
+    width: 100vw;
     overflow: hidden;
-    -webkit-transition: width .2s linear;
-    transition: width .2s linear;
-    -webkit-transform:translateZ(0) scale(1,1);
     box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
+    background-color: rgba(0, 0, 0, 0.6);
     opacity:1;
-    z-index: 5;
+    z-index: 3;
 }
 
 .sidebar .exit {
     height: 100vh;
-    width: calc(100vw - 260px);
-    background: rgba(0, 0, 0, 0.6);
+    width: calc(100% - 260px);
 }
 
 .sidebar .list {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 260px;
     height: 100vh;
     background-color: #FFF;
+    z-index: 4;
 }
 
 .sidebar p {
@@ -155,7 +156,7 @@ input:focus{
     margin: 20px auto 15px;
 }
 
-.users .user, .privacy .public, .privacy .private {
+.users .user, .privacy {
     padding: 5px 20px;
     display: flex;
     justify-content: space-between;
@@ -174,6 +175,10 @@ input:focus{
     font-weight: bold;
 }
 
-.list .check.selected {
+.list .user.selected .check {
+    color: #6BBD2A;
+}
+
+.list .privacy.selected .check {
     color: #6BBD2A;
 }
