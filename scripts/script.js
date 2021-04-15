@@ -1,6 +1,6 @@
 
 let chat = document.querySelector(".chat");
-let userList = document.querySelector(".users .nicklist");
+let userList = document.querySelector(".users .online");
 let selectedUser = document.querySelector(".user.selected");
 let selectedPrivacy = document.querySelector(".privacy.selected");
 let name = document.querySelector(".user.selected .name").innerHTML;
@@ -9,17 +9,14 @@ let input = document.querySelector(".input input");
 let privacyType = 'message';
 let nick;
 
+setInterval(getUsers, 10000);
 getMessages();
-//updateChat();
+//setInterval(getMessages, 3000);
 login();
 
-// Execute a function when the user releases a key on the keyboard
 input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
   if (event.keyCode === 13) {
-    // Cancel the default action, if needed
     event.preventDefault();
-    // Trigger the button element with a click
     document.getElementById("send").click();
   }
 });
@@ -50,10 +47,39 @@ function getUsers() {
     let promise = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/participants');
 
     promise.then(populateUsers);
+    userList.innerHTML = '';
 }
 
-function populateUsers() {
+function populateUsers(users) {
+    
+    for(i = 0; i < users.data.length; i++) {
+        
+        if(users.data[i].name === name) {
 
+            let userDiv = `
+            <div class="user selected" onclick="selectUser(this)">
+                <div>
+                    <ion-icon name="person-circle"></ion-icon>
+                    <span class="name">${users.data[i].name}</span>
+                </div>
+                <ion-icon class="check" name="checkmark"></ion-icon>
+            </div>`
+
+            userList.innerHTML += userDiv;
+        } else {
+
+            let userDiv = `
+            <div class="user" onclick="selectUser(this)">
+                <div>
+                    <ion-icon name="person-circle"></ion-icon>
+                    <span class="name">${users.data[i].name}</span>
+                </div>
+                <ion-icon class="check" name="checkmark"></ion-icon>
+            </div>`
+
+            userList.innerHTML += userDiv;
+        }
+    }
 }
 
 function getMessages() {
@@ -122,17 +148,16 @@ function populateMessages(msgList) {
 }
 
 function sendMessage(input) {
-    let typed = document.getElementById("typing").value;
-    let newMessage = {from: `${nick}`, to: name, text: `${typed}`, type: `${privacyType}`};
+    let typed = document.getElementById("typing");
+    let newMessage = {from: `${nick}`, to: name, text: `${typed.value}`, type: `${privacyType}`};
 
     let promise = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/messages', newMessage);
 
     promise.then(getMessages);
-    typed = '';
+    document.getElementById("typing").value = "";
 }
 
 function openUsers() {
-    // getUsers();
 
     let sidebar = document.querySelector(".sidebar");
     sidebar.style.display = "block";
@@ -163,12 +188,6 @@ function selectPrivacy(pvt) {
         privacyType = 'message';
     }
     updateSending();
-}
-
-function updateChat() {
-
-    setTimeout(getMessages, 3000);
-
 }
 
 function updateSending() {
