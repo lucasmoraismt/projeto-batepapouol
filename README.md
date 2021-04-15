@@ -31,16 +31,16 @@ The focus of this project is to develop pure JavaScript skills and to start to l
 
 ## Features
 
-- [ ] Login experience:
-   - [ ] Checks if nickname is available
-   - [ ] Loads previous messages
-   - [ ] Loads list of active users
+- [x] Login experience:
+   - [x] Checks if nickname is available
+   - [x] Loads previous messages
+   - [x] Loads list of active users
 
-- [ ] Messaging experience
+- [x] Messaging experience
    - [x] Selects user/everyone to send a message
    - [x] Selects between private and public message
-   - [ ] Auto scrolls messages
-   - [ ] Send message on Enter
+   - [x] Auto scrolls messages
+   - [x] Send message on Enter
 
 ---
 
@@ -73,17 +73,13 @@ The following tools were used in the construction of the project:
 
 #### **Mobile**
 
--   **[HTML5](https://html5.org/)**
--   **[CSS3](https://www.w3.org/Style/CSS/Overview.en.html)**
--   **[Pure JavaScript](https://www.javascript.com/)**
-
-#### **Server**  ([NodeJS](https://nodejs.org/en/))
-
--   ** Not yet **
+-   **[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html5.org/)**
+-   **[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/Overview.en.html)**
+-   **[![Pure JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://www.javascript.com/)**
 
 #### **Utilitários**
 
--   Prototype:  **[Figma](https://www.figma.com/)**  →  **[Protótipo (Ecoleta)](https://www.figma.com/file/eviXSw3MnQVphvpalRT78c/Chat-UOL?node-id=0%3A1)**
+-   Prototype:  **[Figma](https://www.figma.com/)**  →  **[Protótipo (Bate Papo)](https://www.figma.com/file/eviXSw3MnQVphvpalRT78c/Chat-UOL?node-id=0%3A1)**
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**
 -   Icons:  **[Ion Icons](https://ionicons.com/)**
 -   Fonts:  **[Roboto](https://fonts.google.com/specimen/Roboto)**
@@ -99,8 +95,8 @@ The following tools were used in the construction of the project:
  <sub><b>Lucas de Morais</b></sub></a>
  <br />
 
-[![Linkedin Badge](https://img.shields.io/badge/&link=https://www.linkedin.com/in/lucasmoraismt/)](https://www.linkedin.com/in/tgmarinho/) 
-[![Gmail Badge](https://img.shields.io/badge/&link=mailto:lucasmoraismt@gmail.com)](mailto:lucasmoraismt@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lucasmoraismt/) 
+[![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lucasmoraismt@gmail.com)
 
 ---
 
