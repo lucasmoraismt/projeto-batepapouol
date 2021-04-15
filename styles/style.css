@@ -38,7 +38,8 @@ a, p, span, div, input {
     height: 100%;
     padding: 90px 0px;
     background-color: #E5E5E5;
-    overflow-y: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .chat .message {
@@ -51,11 +52,11 @@ a, p, span, div, input {
     font-weight: 400;
     margin-bottom: 4px;
     border-radius: 4px;
-    flex-wrap: wrap;
+    word-break: break-all;
 }
 
-.message span {
-    margin: 0px 2px;
+.message span, .message p span {
+    word-break: break-all;
 }
 
 .message .time {
