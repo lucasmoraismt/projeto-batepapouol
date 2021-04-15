@@ -11,7 +11,7 @@ let nick;
 
 setInterval(getUsers, 10000);
 getMessages();
-//setInterval(getMessages, 3000);
+setInterval(getMessages, 3000);
 login();
 
 input.addEventListener("keyup", function(event) {
@@ -47,10 +47,11 @@ function getUsers() {
     let promise = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/participants');
 
     promise.then(populateUsers);
-    userList.innerHTML = '';
 }
 
 function populateUsers(users) {
+
+    userList.innerHTML = '';
     
     for(i = 0; i < users.data.length; i++) {
         
@@ -86,10 +87,11 @@ function getMessages() {
     let promise = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/messages');
 
     promise.then(populateMessages);
-    chat.innerHTML = '';
 }
 
 function populateMessages(msgList) {
+
+    chat.innerHTML = '';
 
     let messageHTML;
     let currentMsg;
@@ -196,5 +198,3 @@ function updateSending() {
     let pvt = privacy.innerHTML;
     sending.innerHTML = `Enviando para ${user} (${pvt})`;
 }
-
-// https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/participants
