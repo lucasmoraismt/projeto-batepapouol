@@ -1,11 +1,13 @@
 
 let screen = document.querySelector(".loginScreen div");
 let chat = document.querySelector(".chat");
+
 let userList = document.querySelector(".users .online");
 let selectedUser = document.querySelector(".user.selected");
 let selectedPrivacy = document.querySelector(".privacy.selected");
-let name = document.querySelector(".user.selected .name").innerHTML;
+let userName = document.querySelector(".user.selected .name").innerHTML;
 let privacy = document.querySelector(".privacy.selected span");
+
 let input = document.querySelector(".input input");
 let privacyType = 'message';
 let nick;
@@ -70,11 +72,10 @@ function getUsers() {
 function populateUsers(users) {
 
     userList.innerHTML = '';
-    
+  
     for(i = 0; i < users.data.length; i++) {
         
-        if(users.data[i].name === name) {
-
+        if(users.data[i].name === userName) {
             let userDiv = `
             <div class="user selected" onclick="selectUser(this)">
                 <div>
@@ -190,19 +191,23 @@ function openUsers() {
 
     let sidebar = document.querySelector(".sidebar");
     sidebar.style.display = "flex";
+    document.querySelector(".list").classList.add("showing")
 }
 
 function exit() {
+    
     let sidebar = document.querySelector(".sidebar");
     sidebar.style.display = "none"
+    document.querySelector(".list").classList.remove("showing")
 }
 
 function selectUser(user) {
-
-    selectedUser.classList.remove("selected");
+    
+    document.querySelector(".user.selected").classList.remove("selected");
     user.classList.add("selected");
     selectedUser = user;
-    name = document.querySelector(".user.selected .name").innerHTML;
+
+    userName = document.querySelector(".user.selected .name").innerHTML;
     updateSending();
 }
 
@@ -222,11 +227,11 @@ function selectPrivacy(pvt) {
 
 function updateSending() {
     let sending = document.querySelector(".sending");
-    let user = name;
+    let user = userName;
     let pvt = privacy.innerHTML;
     sending.innerHTML = `Enviando para ${user} (${pvt})`;
 }
 
 function reloadPage() {
-    document.location.reload(true);
+    window.location.reload();
 }
