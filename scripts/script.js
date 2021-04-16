@@ -177,7 +177,7 @@ function sendMessage(input) {
     if(typed.value === '') {
         return;
     }
-    let newMessage = {from: `${nick}`, to: name, text: `${typed.value}`, type: `${privacyType}`};
+    let newMessage = {from: `${nick}`, to: userName, text: `${typed.value}`, type: `${privacyType}`};
 
     let promise = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/messages', newMessage);
 
