@@ -26,8 +26,7 @@ function login() {
 
     promise.then(loginSuccess);
     promise.catch(usernameNotAvailable);
-    screen.innerHTML = `<img src="assets/loading.gif" alt="Loading" style="margin">
-                        <p>Entrando...</p>`
+    screen.innerHTML = `<img src="assets/loading.gif" alt="Loading" style="margin">`
 }
 
 function loginSuccess() {
