@@ -1,4 +1,5 @@
 
+let screen = document.querySelector(".loginScreen div");
 let chat = document.querySelector(".chat");
 let userList = document.querySelector(".users .online");
 let selectedUser = document.querySelector(".user.selected");
@@ -9,39 +10,56 @@ let input = document.querySelector(".input input");
 let privacyType = 'message';
 let nick;
 
-setInterval(getUsers, 10000);
-getMessages();
-setInterval(getMessages, 3000);
-login();
-
-input.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    document.getElementById("send").click();
-  }
-});
-
 function login() {
-    nick = prompt("Qual seu nome?");
+    nick = document.getElementById("login").value;
+
+    if(nick === '') {
+        alert('Nome inválido!');
+        input.value = '';
+        return;
+    }
     let nickname = {name: `${nick}`};
 
     let promise = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/participants ', nickname);
 
-    promise.then(updateStatus);
+    promise.then(loginSuccess);
     promise.catch(usernameNotAvailable);
+    screen.innerHTML = `<img src="assets/loading.gif" alt="Loading" style="margin">
+                        <p>Entrando...</p>`
 }
 
-function updateStatus() {
-    let message = {name: `${nick}`};
-    axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/status', message);
+function loginSuccess() {
 
-    setTimeout(updateStatus, 5000);
+    getUsers();
+    setInterval(getUsers, 10000);
+    getMessages();
+    setInterval(getMessages, 3000);
+    updateStatus();
+    setInterval(updateStatus, 5000);
+
+    openChat();
 }
 
 function usernameNotAvailable(error) {
     alert("Nome de usuário não disponível!");
-    login();
+
+    screen.innerHTML = `<input type="text" id="login" placeholder="Digite seu nome">
+                        <button id="loginButton" onclick="login(this)">Entrar</button>`
 }
+
+function openChat() {
+
+    let loginScreen = document.querySelector(".loginScreen");
+    loginScreen.style.display = "none";
+}
+
+// Enviar com Enter
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      document.getElementById("send").click();
+    }
+  });
 
 function getUsers() {
     let promise = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/participants');
@@ -149,20 +167,29 @@ function populateMessages(msgList) {
     chat.scrollTop = chat.scrollHeight;
 }
 
+function updateStatus() {
+    let message = {name: `${nick}`};
+    axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/status', message);
+}
+
 function sendMessage(input) {
     let typed = document.getElementById("typing");
+    if(typed.value === '') {
+        return;
+    }
     let newMessage = {from: `${nick}`, to: name, text: `${typed.value}`, type: `${privacyType}`};
 
     let promise = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/messages', newMessage);
 
     promise.then(getMessages);
+    promise.catch(reloadPage);
     document.getElementById("typing").value = "";
 }
 
 function openUsers() {
 
     let sidebar = document.querySelector(".sidebar");
-    sidebar.style.display = "block";
+    sidebar.style.display = "flex";
 }
 
 function exit() {
@@ -171,6 +198,7 @@ function exit() {
 }
 
 function selectUser(user) {
+
     selectedUser.classList.remove("selected");
     user.classList.add("selected");
     selectedUser = user;
@@ -197,4 +225,8 @@ function updateSending() {
     let user = name;
     let pvt = privacy.innerHTML;
     sending.innerHTML = `Enviando para ${user} (${pvt})`;
+}
+
+function reloadPage() {
+    document.location.reload(true);
 }

@@ -16,6 +16,7 @@
 </head>
 <body>
     <div class="app">
+
         <div class="top">
             <img src="assets/logo.png" alt="Bate Papo Logo">
             <ion-icon onclick="openUsers()" name="people"></ion-icon>
@@ -38,7 +39,6 @@
         <div class="sidebar">
 
             <div class="exit" onclick="exit()">
-
             </div>
 
             <div class="list">
@@ -55,7 +55,6 @@
                     </div>
 
                     <div class="online">
-                        
                     </div>
 
                 </div>
@@ -64,24 +63,41 @@
                     <p>Escolha a visibilidade:</p>
 
                     <div class="privacy selected" onclick="selectPrivacy(this)">
+
                         <div>
                             <ion-icon name="lock-open"></ion-icon>
                             <span>Público</span>
                         </div>
                         <ion-icon class="check" name="checkmark"></ion-icon>
+
                     </div>
 
                     <div class="privacy" onclick="selectPrivacy(this)">
+
                         <div>
                             <ion-icon name="lock-closed"></ion-icon>
                             <span>Privado</span> 
                         </div>
                         <ion-icon class="check" name="checkmark"></ion-icon>
+
                     </div>
 
                 </div>
+
             </div>
+
         </div>
+
+        <div class="loginScreen">
+
+            <img src="assets/logo.png" alt="Bate Papo Logo">
+    
+            <div>
+                <input type="text" id="login" placeholder="Digite seu nome">
+                <button id="loginButton" onclick="login()">Entrar</button>
+            </div>
+        </div>    
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

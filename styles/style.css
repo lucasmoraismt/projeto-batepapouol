@@ -2,10 +2,16 @@ a, p, span, div, input {
     font-family: 'Roboto', sans-serif;
 }
 
-.app {
+body {
     width: 100vw;
     height: 100vh;
-    position: relative
+    position: relative;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .top {
@@ -80,7 +86,7 @@ a, p, span, div, input {
     align-items: center;
     justify-content: space-between;
     padding: 0px 18px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     height: 80px;
@@ -119,6 +125,61 @@ input:focus{
     font-size: 26px;
 }
 
+.loginScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #FFF;
+    z-index: 5;
+}
+
+.loginScreen img {
+    width: 130px;
+    margin: 65px auto 90px;
+}
+
+.loginScreen:last-child {
+    margin: 0px;
+}
+
+.loginScreen div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#login {
+    width: 260px;
+    height: 55px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #D7D7D7;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+#loginButton {
+    width: 110px;
+    height: 45px;
+    background: #E7E7E7;
+    border-radius: 9px;
+    border: none;
+}
+
+#login::placeholder {
+    font-size: 18px;
+    line-height: 20px;
+    color: #AEAEAE;
+}
+
 .sidebar {
     position:absolute;
     top: 0;
@@ -145,6 +206,7 @@ input:focus{
     width: 260px;
     height: 100vh;
     background-color: #FFF;
+    overflow:scroll;
     z-index: 4;
 }
 
@@ -167,6 +229,10 @@ input:focus{
 .user div:first-child {
     display: flex;
     align-items: center;
+}
+
+.user .name {
+    height: auto;
 }
 
 .sidebar ion-icon {
