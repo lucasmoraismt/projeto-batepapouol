@@ -13,20 +13,19 @@ let privacyType = 'message';
 let nick;
 
 function login() {
+    
     nick = document.getElementById("login").value;
-
     if(nick === '') {
         alert('Nome inválido!');
         input.value = '';
         return;
     }
     let nickname = {name: `${nick}`};
-
+    screen.innerHTML = `<img src="assets/loading.gif" alt="Loading" style="margin: 0">`
     let promise = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/participants ', nickname);
 
     promise.then(loginSuccess);
     promise.catch(usernameNotAvailable);
-    screen.innerHTML = `<img src="assets/loading.gif" alt="Loading" style="margin">`
 }
 
 function loginSuccess() {
@@ -38,7 +37,7 @@ function loginSuccess() {
     updateStatus();
     setInterval(updateStatus, 5000);
 
-    openChat();
+    setTimeout(openChat, 800);
 }
 
 function usernameNotAvailable(error) {
@@ -70,6 +69,7 @@ function getUsers() {
 
 function populateUsers(users) {
 
+    let usersHTML = '';
     userList.innerHTML = '';
   
     for(i = 0; i < users.data.length; i++) {
@@ -84,7 +84,7 @@ function populateUsers(users) {
                 <ion-icon class="check" name="checkmark"></ion-icon>
             </div>`
 
-            userList.innerHTML += userDiv;
+            usersHTML += userDiv;
         } else {
 
             let userDiv = `
@@ -96,9 +96,11 @@ function populateUsers(users) {
                 <ion-icon class="check" name="checkmark"></ion-icon>
             </div>`
 
-            userList.innerHTML += userDiv;
+            usersHTML += userDiv;
         }
     }
+
+    userList.innerHTML = usersHTML;
 }
 
 function getMessages() {
@@ -111,6 +113,7 @@ function populateMessages(msgList) {
 
     chat.innerHTML = '';
 
+    let chatHTML = '';
     let messageHTML;
     let currentMsg;
 
@@ -128,7 +131,7 @@ function populateMessages(msgList) {
                     </p>
                 </div>`;
 
-            chat.innerHTML += messageHTML;
+            chatHTML += messageHTML;
 
         } else if(msgList.data[i].type === 'message') {
 
@@ -144,7 +147,7 @@ function populateMessages(msgList) {
                     </p>
                 </div>`;
 
-            chat.innerHTML += messageHTML;
+            chatHTML += messageHTML;
 
         } else if((msgList.data[i].to === nick && msgList.data[i].type === 'private_message') || (msgList.data[i].from === nick && msgList.data[i].type === 'private_message')){
 
@@ -160,10 +163,11 @@ function populateMessages(msgList) {
                     </p>
                 </div>`;
 
-            chat.innerHTML += messageHTML;
+            chatHTML += messageHTML;
         }
     }
 
+    chat.innerHTML = chatHTML;
     chat.scrollTop = chat.scrollHeight;
 }
 
