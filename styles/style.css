@@ -1,4 +1,4 @@
-a, p, span, div, input {
+a, p, span, div, li, input {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -68,10 +68,6 @@ body {
 
 .message .time {
     color: #AEAEAE;
-}
-
-.message .user {
-    font-weight: 700;
 }
 
 .message.status {

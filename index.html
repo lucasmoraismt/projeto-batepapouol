@@ -22,9 +22,9 @@
             <ion-icon onclick="openUsers()" name="people"></ion-icon>
         </div>
 
-        <div class="chat">
+        <ul class="chat">
             
-        </div>
+        </ul>
 
         <div class="send">
             <div class="input">
@@ -53,21 +53,21 @@
 
     <div class="list">
 
-        <div class="users">
+        <ul class="users">
             <p>Escolha um contato para enviar mensagem:</p>
 
-            <div class="user selected" onclick="selectUser(this)">
+            <li class="user selected" onclick="selectUser(this)">
                 <div>
                     <ion-icon name="people"></ion-icon>
                     <span class="name">Todos</span>
                 </div>
                 <ion-icon class="check" name="checkmark"></ion-icon>
-            </div>
+            </li>
 
-            <div class="online">
-            </div>
+            <li class="online">
+            </li>
 
-        </div>
+        </ul>
 
         <div>
             <p>Escolha a visibilidade:</p>
@@ -102,7 +102,3 @@
     <script src="scripts/script.js"></script>
 </body>
 </html>
-
-<!-- <ion-icon name="person-circle"></ion-icon>
-     <ion-icon name="checkmark"></ion-icon>
--->

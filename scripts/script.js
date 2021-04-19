@@ -70,36 +70,36 @@ function getUsers() {
 function populateUsers(users) {
 
     let usersHTML = '';
-    userList.innerHTML = '';
   
     for(i = 0; i < users.data.length; i++) {
         
         if(users.data[i].name === userName) {
             let userDiv = `
-            <div class="user selected" onclick="selectUser(this)">
+            <li class="user selected" onclick="selectUser(this)">
                 <div>
                     <ion-icon name="person-circle"></ion-icon>
                     <span class="name">${users.data[i].name}</span>
                 </div>
                 <ion-icon class="check" name="checkmark"></ion-icon>
-            </div>`
+            </li>`
 
             usersHTML += userDiv;
         } else {
 
             let userDiv = `
-            <div class="user" onclick="selectUser(this)">
+            <li class="user" onclick="selectUser(this)">
                 <div>
                     <ion-icon name="person-circle"></ion-icon>
                     <span class="name">${users.data[i].name}</span>
                 </div>
                 <ion-icon class="check" name="checkmark"></ion-icon>
-            </div>`
+            </li>`
 
             usersHTML += userDiv;
         }
     }
 
+    userList.innerHTML = '';
     userList.innerHTML = usersHTML;
 }
 
@@ -111,62 +111,63 @@ function getMessages() {
 
 function populateMessages(msgList) {
 
-    chat.innerHTML = '';
-
     let chatHTML = '';
     let messageHTML;
     let currentMsg;
 
     for(i = 0; i < msgList.data.length; i++) {
 
-        if(msgList.data[i].type === 'status') {
+        let messageI = msgList.data[i];
 
-            currentMsg = msgList.data[i]
+        if(messageI.type === 'status') {
+
+            currentMsg = messageI
             messageHTML = `
-                <div class="message status">
+                <li class="message status">
                     <p>
                         <span class="time">(${currentMsg.time})</span>
-                        <span class="user">${currentMsg.from}</span>
+                        <strong>${currentMsg.from}</strong>
                         <span>${currentMsg.text}</span>
                     </p>
-                </div>`;
+                </li>`;
 
             chatHTML += messageHTML;
 
-        } else if(msgList.data[i].type === 'message') {
+        } else if(messageI.type === 'message') {
 
-            currentMsg = msgList.data[i];
+            currentMsg = messageI;
             messageHTML = `
-                <div class="message">
+                <li class="message">
                     <p>
                         <span class="time">(${currentMsg.time})</span>
-                        <span class="user">${currentMsg.from}</span>
+                        <strong>${currentMsg.from}</strong>
                         <span>para</span>
-                        <span class="user">${currentMsg.to}</span>
-                        <span>: ${currentMsg.text}</span>
+                        <strong>${currentMsg.to}:</strong>
+                        <span> ${currentMsg.text}</span>
                     </p>
-                </div>`;
+                </li>`;
 
             chatHTML += messageHTML;
 
-        } else if((msgList.data[i].to === nick && msgList.data[i].type === 'private_message') || (msgList.data[i].from === nick && msgList.data[i].type === 'private_message')){
+        } else if((messageI.to === nick || messageI.from === nick || messageI.to === "Todos") && messageI.type === 'private_message'){
 
-            currentMsg = msgList.data[i];
+            currentMsg = messageI;
             messageHTML = `
-                <div class="message private">
+                <li class="message private">
                     <p>
                         <span class="time">(${currentMsg.time})</span>
-                        <span class="user">${currentMsg.from}</span>
+                        <strong>${currentMsg.from}</strong>
                         <span>privado para</span>
-                        <span class="user">${currentMsg.to}</span>
+                        <strong>${currentMsg.to}:</strong>
                         <span>${currentMsg.text}</span>
                     </p>
-                </div>`;
+                </li>`;
 
             chatHTML += messageHTML;
         }
     }
 
+    chat.innerHTML = '';
     chat.innerHTML = chatHTML;
     chat.scrollTop = chat.scrollHeight;
 }
