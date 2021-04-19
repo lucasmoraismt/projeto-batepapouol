@@ -70,7 +70,8 @@ function getUsers() {
 function populateUsers(users) {
 
     let usersHTML = '';
-  
+    let found = false;
+
     for(i = 0; i < users.data.length; i++) {
         
         if(users.data[i].name === userName) {
@@ -83,6 +84,7 @@ function populateUsers(users) {
                 <ion-icon class="check" name="checkmark"></ion-icon>
             </li>`
 
+            found = true;
             usersHTML += userDiv;
         } else {
 
@@ -99,6 +101,9 @@ function populateUsers(users) {
         }
     }
 
+    if(userName !== "Todos" && !found) {
+        document.querySelector(".user").classList.add("selected");
+    }
     userList.innerHTML = '';
     userList.innerHTML = usersHTML;
 }
