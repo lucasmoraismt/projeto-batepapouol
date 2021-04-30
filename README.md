@@ -18,7 +18,7 @@
 </p>
 
 <h4 align="center"> 
-	 Status: In Development...
+	 Status: Delivered
 </h4>
 
 ## About
