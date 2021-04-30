@@ -49,7 +49,7 @@ The focus of this project is to develop pure JavaScript skills and to start to l
 The application layout is available on Figma:
 
 <a href="https://www.figma.com/file/eviXSw3MnQVphvpalRT78c/Chat-UOL?node-id=0%3A1">
-  <img alt="Project Figma" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
+  <img alt="Project Figma" src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 </a>
 
 
@@ -60,12 +60,6 @@ The application layout is available on Figma:
 
   <img alt="Chat" title="#BatePapo" src="assets/chat.png" width="200px">
 </p>
-
-### Pre-requisites
-
-Before you begin, you will need to have the following tools installed on your machine:
-[Git] (https://git-scm.com), [Node.js] (https://nodejs.org/en/).
-In addition, it is good to have an editor to work with the code like [VSCode] (https://code.visualstudio.com/)
 
 ## Tech Used
 
@@ -79,7 +73,7 @@ The following tools were used in the construction of the project:
 
 #### **Utilitários**
 
--   Prototype:  **[Figma](https://www.figma.com/)**  →  **[Protótipo (Bate Papo)](https://www.figma.com/file/eviXSw3MnQVphvpalRT78c/Chat-UOL?node-id=0%3A1)**
+-   Prototype:  **[Figma](https://www.figma.com/)**  →  **[Prototype (Bate Papo)](https://www.figma.com/file/eviXSw3MnQVphvpalRT78c/Chat-UOL?node-id=0%3A1)**
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**
 -   Icons:  **[Ion Icons](https://ionicons.com/)**
 -   Fonts:  **[Roboto](https://fonts.google.com/specimen/Roboto)**
@@ -90,7 +84,7 @@ The following tools were used in the construction of the project:
 ## Author
 
 <a style="border-radius: 50%;" width="100px;" href="https://user-images.githubusercontent.com/31478895/114489151-08aa5d00-9be9-11eb-9d42-1ff1f1e85b6f.jpg">
- <img style="border-radius: 50%;" src="https://user-images.githubusercontent.com/31478895/114489151-08aa5d00-9be9-11eb-9d42-1ff1f1e85b6f.jpg" width="100px;" alt="Lucas Morais"/>
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/31478895?s=400&u=42f732bb139de94096939fe3a36d2423d1bc9550&v=4" width="100px;" alt="Lucas Morais"/>
  <br />
  <sub><b>Lucas de Morais</b></sub></a>
  <br />
@@ -104,6 +98,6 @@ The following tools were used in the construction of the project:
 
 This project is under the license [MIT](./LICENSE).
 
-Made with love by Lucas de Morais 👋🏽 [Get in Touch!](Https://www.linkedin.com/in/lucasmoraismt/)
+Made with love by Lucas de Morais 👋🏽
 
 ---
